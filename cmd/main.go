@@ -37,6 +37,7 @@ import (
 	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost"
 	"github.com/kenphunggg/kube-startup-cpu-boost/internal/config"
 	"github.com/kenphunggg/kube-startup-cpu-boost/internal/controller"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/lazylib"
 	"github.com/kenphunggg/kube-startup-cpu-boost/internal/metrics"
 	"github.com/kenphunggg/kube-startup-cpu-boost/internal/util"
 	boostWebhook "github.com/kenphunggg/kube-startup-cpu-boost/internal/webhook"
@@ -64,7 +65,7 @@ func init() {
 }
 
 func main() {
-	fmt.Println("HELLO FROM KEN, IT IS MY CUSTOM")
+	lazylib.LogInfo("Hello from LAZYken")
 	cfg, err := config.NewEnvConfigProvider(os.LookupEnv).LoadConfig()
 	if err != nil {
 		setupLog.Error(err, "unable to load configuration")
