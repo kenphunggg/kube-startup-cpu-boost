@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"time"
 
-	bpod "github.com/google/kube-startup-cpu-boost/internal/boost/pod"
+	bpod "github.com/kenphunggg/kube-startup-cpu-boost/internal/boost/pod"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"

@@ -30,8 +30,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
 
 	"github.com/go-logr/logr"
-	autoscaling "github.com/google/kube-startup-cpu-boost/api/v1alpha1"
-	"github.com/google/kube-startup-cpu-boost/internal/boost"
+	autoscaling "github.com/kenphunggg/kube-startup-cpu-boost/api/v1alpha1"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

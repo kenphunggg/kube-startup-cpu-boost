@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	autoscaling "github.com/google/kube-startup-cpu-boost/api/v1alpha1"
-	bpod "github.com/google/kube-startup-cpu-boost/internal/boost/pod"
+	autoscaling "github.com/kenphunggg/kube-startup-cpu-boost/api/v1alpha1"
+	bpod "github.com/kenphunggg/kube-startup-cpu-boost/internal/boost/pod"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	corev1 "k8s.io/api/core/v1"

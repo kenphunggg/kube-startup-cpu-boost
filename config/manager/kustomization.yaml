@@ -4,5 +4,5 @@ resources:
 - manager.yaml
 images:
 - name: controller
-  newName: ghcr.io/google/kube-startup-cpu-boost
+  newName: docker.io/lazyken/kube-startup-cpu-boost
   newTag: dev

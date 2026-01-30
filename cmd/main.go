@@ -33,13 +33,13 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	autoscalingv1alpha1 "github.com/google/kube-startup-cpu-boost/api/v1alpha1"
-	"github.com/google/kube-startup-cpu-boost/internal/boost"
-	"github.com/google/kube-startup-cpu-boost/internal/config"
-	"github.com/google/kube-startup-cpu-boost/internal/controller"
-	"github.com/google/kube-startup-cpu-boost/internal/metrics"
-	"github.com/google/kube-startup-cpu-boost/internal/util"
-	boostWebhook "github.com/google/kube-startup-cpu-boost/internal/webhook"
+	autoscalingv1alpha1 "github.com/kenphunggg/kube-startup-cpu-boost/api/v1alpha1"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/config"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/controller"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/metrics"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/util"
+	boostWebhook "github.com/kenphunggg/kube-startup-cpu-boost/internal/webhook"
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	//+kubebuilder:scaffold:imports
 )
@@ -64,6 +64,7 @@ func init() {
 }
 
 func main() {
+	fmt.Println("HELLO FROM KEN, IT IS MY CUSTOM")
 	cfg, err := config.NewEnvConfigProvider(os.LookupEnv).LoadConfig()
 	if err != nil {
 		setupLog.Error(err, "unable to load configuration")

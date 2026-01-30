@@ -36,6 +36,8 @@ spec:
       labels:
         control-plane: controller-manager
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: master
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:

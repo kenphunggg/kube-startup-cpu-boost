@@ -17,7 +17,7 @@ package config_test
 import (
 	"fmt"
 
-	"github.com/google/kube-startup-cpu-boost/internal/config"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/config"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

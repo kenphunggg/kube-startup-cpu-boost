@@ -17,8 +17,8 @@ package webhook_test
 import (
 	"context"
 
-	"github.com/google/kube-startup-cpu-boost/api/v1alpha1"
-	"github.com/google/kube-startup-cpu-boost/internal/webhook"
+	"github.com/kenphunggg/kube-startup-cpu-boost/api/v1alpha1"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/webhook"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

@@ -23,8 +23,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/google/kube-startup-cpu-boost/internal/mock"
-	"github.com/google/kube-startup-cpu-boost/internal/util"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/mock"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/util"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"go.uber.org/mock/gomock"

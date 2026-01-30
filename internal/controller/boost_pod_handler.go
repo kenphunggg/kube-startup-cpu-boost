@@ -18,8 +18,8 @@ import (
 	"context"
 
 	"github.com/go-logr/logr"
-	"github.com/google/kube-startup-cpu-boost/internal/boost"
-	bpod "github.com/google/kube-startup-cpu-boost/internal/boost/pod"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost"
+	bpod "github.com/kenphunggg/kube-startup-cpu-boost/internal/boost/pod"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/equality"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

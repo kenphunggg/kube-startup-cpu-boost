@@ -15,7 +15,7 @@
 package metrics_test
 
 import (
-	"github.com/google/kube-startup-cpu-boost/internal/metrics"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/metrics"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

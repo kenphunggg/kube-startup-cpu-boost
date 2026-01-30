@@ -17,7 +17,7 @@ package resource_test
 import (
 	"context"
 
-	"github.com/google/kube-startup-cpu-boost/internal/boost/resource"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost/resource"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 

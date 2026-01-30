@@ -21,15 +21,15 @@ import (
 	"sync"
 	"time"
 
-	autoscaling "github.com/google/kube-startup-cpu-boost/api/v1alpha1"
+	autoscaling "github.com/kenphunggg/kube-startup-cpu-boost/api/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
 	"github.com/go-logr/logr"
-	"github.com/google/kube-startup-cpu-boost/internal/boost/duration"
-	"github.com/google/kube-startup-cpu-boost/internal/metrics"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/boost/duration"
+	"github.com/kenphunggg/kube-startup-cpu-boost/internal/metrics"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 

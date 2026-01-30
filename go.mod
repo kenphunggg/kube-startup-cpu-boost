@@ -1,4 +1,4 @@
-module github.com/google/kube-startup-cpu-boost
+module github.com/kenphunggg/kube-startup-cpu-boost
 
 go 1.23.0
 
