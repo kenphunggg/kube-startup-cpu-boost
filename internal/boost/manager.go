@@ -287,6 +287,16 @@ func (m *managerImpl) getMatchingBoost(pod *corev1.Pod) (StartupCPUBoost, bool) 
 // postProcessNewBoost performs additional post processing of a newly registered boost
 func (m *managerImpl) postProcessNewBoost(ctx context.Context, boost StartupCPUBoost) {
 	log := m.log.WithValues("boost", boost.Name(), "namespace", boost.Namespace())
+	_, hasFixed := boost.DurationPolicies()[duration.FixedDurationPolicyName]
+	_, hasAPI := boost.DurationPolicies()["APICondition"] // Note: Use whatever constant name you defined, or just the raw string
+	if hasFixed || hasAPI {
+		log.V(5).Info("adding boost to timedBoosts collection")
+		m.timedBoosts.Put(boost.Name(), boost.Namespace(), boost)
+	}
+
+	if err := m.mapOrphanedPods(ctx, boost); err != nil {
+		log.Error(err, "failed to map orphaned pods")
+	}
 	if _, ok := boost.DurationPolicies()[duration.FixedDurationPolicyName]; ok {
 		log.V(5).Info("adding boost to timedBoosts collection")
 		m.timedBoosts.Put(boost.Name(), boost.Namespace(), boost)
@@ -335,6 +345,12 @@ func (m *managerImpl) validateTimePolicyBoosts(ctx context.Context) {
 	go func() {
 		for _, boost := range timeBoosts {
 			for _, pod := range boost.ValidatePolicy(ctx, duration.FixedDurationPolicyName) {
+				revertTasks <- &podRevertTask{
+					boost: boost,
+					pod:   pod,
+				}
+			}
+			for _, pod := range boost.ValidatePolicy(ctx, "APICondition") {
 				revertTasks <- &podRevertTask{
 					boost: boost,
 					pod:   pod,

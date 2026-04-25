@@ -90,6 +90,9 @@ func validateDurationPolicy(policy v1alpha1.DurationPolicy) *field.Error {
 	if policy.PodCondition != nil {
 		cnt++
 	}
+	if policy.APICondition != nil {
+		cnt++
+	}
 	if cnt != 1 {
 		err := errors.New("one type of duration policy should be defined")
 		return field.Invalid(fldPath, policy, err.Error())

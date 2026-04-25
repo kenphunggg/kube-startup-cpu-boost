@@ -50,6 +50,17 @@ type PodConditionDurationPolicy struct {
 	Status corev1.ConditionStatus `json:"status,omitempty"`
 }
 
+// APIConditionPolicy defines a custom external API check to end the boost
+type APIConditionPolicy struct {
+	// URL to send the HTTP GET request to
+	// +kubebuilder:validation:Required
+	URL string `json:"url"`
+
+	// Expected string in the response body to trigger the end of the boost
+	// +kubebuilder:validation:Required
+	Response string `json:"response"`
+}
+
 // DurationPolicy defines the policy used to determine the duration
 // time of a resource boost
 type DurationPolicy struct {
@@ -59,6 +70,8 @@ type DurationPolicy struct {
 	// podCondition based duration policy
 	// +kubebuilder:validation:Optional
 	PodCondition *PodConditionDurationPolicy `json:"podCondition,omitempty"`
+
+	APICondition *APIConditionPolicy `json:"apiCondition,omitempty"`
 }
 
 // FixedResources defines the CPU resource policy that sets CPU resources

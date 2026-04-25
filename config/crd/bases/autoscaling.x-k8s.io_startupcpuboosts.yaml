@@ -92,6 +92,21 @@ spec:
                 description: DurationPolicy specifies policies for resource boost
                   duration
                 properties:
+                  apiCondition:
+                    description: APIConditionPolicy defines a custom external API
+                      check to end the boost
+                    properties:
+                      response:
+                        description: Expected string in the response body to trigger
+                          the end of the boost
+                        type: string
+                      url:
+                        description: URL to send the HTTP GET request to
+                        type: string
+                    required:
+                    - response
+                    - url
+                    type: object
                   fixedDuration:
                     description: fixed time duration policy
                     properties:

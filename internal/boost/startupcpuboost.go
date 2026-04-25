@@ -349,6 +349,9 @@ func mapDurationPolicy(policiesSpec autoscaling.DurationPolicy) map[string]durat
 	if condPolicy := policiesSpec.PodCondition; condPolicy != nil {
 		policies[duration.PodConditionPolicyName] = duration.NewPodConditionPolicy(condPolicy.Type, condPolicy.Status)
 	}
+	if apiCond := policiesSpec.APICondition; apiCond != nil {
+		policies[duration.APIConditionPolicyName] = duration.NewAPIConditionPolicy(apiCond.URL, apiCond.Response)
+	}
 	return policies
 }
 
